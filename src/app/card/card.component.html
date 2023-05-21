@@ -1,0 +1,17 @@
+<input type="text" [(ngModel)]="city" value="London">
+<select style="width: 150px;" name="" id="" [(ngModel)]="country">
+  <option [(ngModel)]="option" *ngFor="let x of getCountryValue.data" ></option>
+</select>
+<p *ngFor="let o of getCountryValue.data" >{{o.country | json}}ng</p>
+<button (click)="getMethod()">search</button>
+<div class="main" style="display: flex;"><div *ngFor="let i of getJsonValue.list" class="card" style="width: 14rem;">
+    <img [src]="icon+i.weather[0].icon+icon1" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">temp: {{i.main.temp | json}}&deg;F</h5>
+      <p class="card-text">Temp min-max: {{i.main.temp_min}}&deg;F-{{i.main.temp_max}}&deg;F</p>
+      <p>description: {{i.weather[0].description | json}}</p>
+      <p>wind speed: {{i.wind.speed}} m/s</p>
+      <p></p>
+    </div>
+  </div>
+  <p>{{getJsonValue | json}}</p></div>
